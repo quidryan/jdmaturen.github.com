@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=900"> <!-- iPhone -->
+        <title>JD Maturen</title>
+        <style type="text/css" title="currentStyle" media="screen">
+           
+           html, body {
+               height: 100%;
+               margin: 0;
+               padding: 0;
+               background-color: #ffffff;
+               color:#000000;
+               font-family: "Times New Roman", Georgia, Times, serif;
+               font-size: 12px;
+           }
+
+           a {
+               color: #000000;
+               text-decoration: none;
+           }
+
+           a:hover {
+               text-decoration: underline;
+           }
+
+           hr {
+               border: 0;
+               height: 1px;
+               color: #999999;
+               background-color: #999999;
+           }
+
+           .gallery { 
+               border-collapse: collapse; 
+               height: 100%;
+               width: 100%;
+           }
+
+           #navbar {
+               position: absolute;
+               padding: 7px 0 3px 0;
+               width: 100%;
+               letter-spacing: 2px;
+           }
+
+           #navbar #navitems {
+               padding: 0 0 0 18px;
+           }
+
+           .bar {
+               margin: 0 3px;
+           }
+
+           .img {
+               vertical-align: middle;
+               text-align: center;
+           }
+
+           .img img, div {
+               margin: auto;
+           }
+           
+           h1, h2 {
+               font-size: 3em;
+               font-style: italic;
+               letter-spacing: 2px;
+           }
+           
+           h2 {
+               font-size: 2em;
+           }
+           
+           .img p {
+               text-align: left;
+               font-size: 1.5em;
+           }
+           
+           .img a {
+               color: rgb(0, 0, 190);
+           }
+           
+           .img code {
+               background-color: #EEEEEE;
+               border: 1px #DDDDDD solid;
+               padding-right: 0.25em;
+               padding-left: 0.25em;
+           }
+           
+           .img blockquote {
+               font-size: 2em;
+               font-variant: small-caps;
+           }
+           
+           .date {
+               font-variant: small-caps;
+           }
+           
+           .img div {
+               border: 1px black;
+               width: 512px;
+           }
+           
+           .img ul, ol {
+               text-align: left;
+               font-size: 1.5em;
+           }
+
+           .text {
+               margin: 0 auto;
+               text-align: left;
+               width: 535px;
+               background-color: #ffffff;
+               padding: 45px 45px 30px 45px;
+               border: 1px #333333 solid;
+           }
+
+           .text p {
+               line-height: 1.8em;
+           }
+
+           .text a {
+               letter-spacing: 1px;
+           }
+       </style>
+    </head>
+    <body>
+    
+        <div id="navbar">
+            <div id="navitems">
+                <em>JD 2013</em>
+            </div>
+        </div>
+    
+        <a name="01"></a>
+        <table class="gallery">
+            <tr>
+                <td class="img">
+                    <div>
+                    <h1>DRAFT — How much is your startup stock worth?</h1>
+                    
+                    <p>
+                        <span class="date"><a href="https://twitter.com/jdmaturen">JD Maturen</a>, November 8, 2013, San Francisco, CA</span>
+                    </p>
+                    
+                    <p>
+                        <a href="https://twitter.com/aileenlee">Aileen Lee</a> <a href="http://techcrunch.com/2013/11/02/welcome-to-the-unicorn-club/">recently wrote</a> about the cohort of companies from the past decade that have grown to a billion dollar plus valuation. Notably she estimated that approximately 0.07% of venture backed companies reached this pinnacle. As employees of venture backed companies what can we learn from this data?
+                    </p>
+                    
+                    <blockquote>
+                        You can’t get rich on salary.
+                    </blockquote>
+                    
+                    <p>
+                        Equity is typically an important component of startup compensation. If you’re taking a hit on your salary in order to work for a startup how do you quantify what you are giving up?
+                    </p>
+                    
+                    <p>
+                        An easy way of investigating this is to ask, what percentage of the company do you need to own if you want to earn a $1M payout as an early employee at a random startup? The <code>average value</code> in the unicorn cohort is $3.6B. At a 0.07% <code>success rate</code>, a (reasonable) 20% <code>dilution rate</code> per round, and (arbitrarily) 4 <code>rounds of funding</code> the averaged remaining value of the entire random company is <code>average value * success rate * (1 - dilution rate) ^ rounds of funding</code> which is just over $1M. So you need to own the whole thing. This certainly ain’t gonna cut it of you own between a tenth and a ten thousandth of a percent.
+                    </p>
+                    
+                    <blockquote cite="http://brucehardie.com/papers/022/">
+                        There’s no such thing as an average user.
+                    </blockquote>
+                    
+                    <p>
+                        So if the odds are so bad what do we do? The first thing to note is that the average representation is a fallacy. Even within the unicorn cohort company valuations follow an extreme curve, reminiscent of the <a href="http://en.wikipedia.org/wiki/Power_law">power law</a> <a href="#ref-01">[1]</a>. This is precisely why we cannot take a portfolio, index or random sampling approach to choosing companies to work for. We must come up with our own hypotheses for which companies have a bright future. 
+                    </p>
+                    
+                    <p>
+                        It might be tempting to lean heavily on external information, such as the success of investors to help make this decision. However there is no good data to say this significantly increases your odds. And intuitively the better the investors in the company, the larger the stake they will have, the higher the valuation of the company will be going in and the smaller your share becomes.
+                    </p>
+                    
+                    <p>
+                        What about joining a later stage company? I’d be super curious to investigate this more. What do the conditional odds look like after surviving <code>N</code> rounds of funding, or generating <code>$X</code> in revenue? If you have data on this — Hi, VCs! — please <a href="https://twitter.com/jdmaturen">send it my way</a>.
+                    </p>
+                    
+                    
+                    <h2>References & Further Reading</h2>
+                    <ol>
+                        <li><a name="ref-00" href="http://techcrunch.com/2013/11/02/welcome-to-the-unicorn-club/">Welcome To The Unicorn Club: Learning From Billion-Dollar Startups</a></li>
+                        <li><a name="ref-01" href="http://blakemasters.com/post/21869934240/peter-thiels-cs183-startup-class-7-notes-essay">Peter Thiel’s CS183: Startup - Class 7 Notes Essay</a></li>
+                        <li><a name="ref-02" href="http://brucehardie.com/papers/022/">Customer-Base Valuation in a Contractual Setting:
+The Perils of Ignoring Heterogeneity</a>. In particular the mathematics here cross applies to all sorts of retention models.</li>
+                        <li><a name="ref-03" href="https://blog.wealthfront.com/startup-employee-equity-compensation/">Wealthfront — Manage Your Tech Career</a></li>
+                    </ol>
+                    
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
