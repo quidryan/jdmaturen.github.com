@@ -69,6 +69,7 @@
            }
            
            h2 {
+               margin-top: 3em;
                font-size: 2em;
            }
            
@@ -127,6 +128,15 @@
            .text a {
                letter-spacing: 1px;
            }
+           
+           #calculator {
+               text-align: left;
+               font-size: 1.25em;
+           }
+           
+           #calculator label {
+               width: 256px;
+           }
        </style>
     </head>
     <body>
@@ -149,7 +159,7 @@
                     </p>
                     
                     <p>
-                        <a href="https://twitter.com/aileenlee">Aileen Lee</a> <a href="http://techcrunch.com/2013/11/02/welcome-to-the-unicorn-club/">recently wrote</a> about the cohort of companies from the past decade that have grown to a billion dollar plus valuation — so called unicorn club. Notably she estimated that approximately 0.07% of venture backed companies reached this pinnacle. As employees of venture backed companies what can we learn from this data?
+                        <a href="https://twitter.com/aileenlee">Aileen Lee</a> <a href="http://techcrunch.com/2013/11/02/welcome-to-the-unicorn-club/">recently wrote</a> about the cohort of companies from the past decade that have grown to a billion dollar plus valuation — the so called unicorn club. Notably she estimated that approximately 0.07% of venture backed companies reached this pinnacle. As employees of venture backed companies what can we learn from this data?
                     </p>
                     
                     <blockquote>
@@ -161,7 +171,7 @@
                     </p>
                     
                     <p>
-                        An easy way of investigating this is to ask, what percentage of the company do you need to own if you want to earn a $1M payout as an early employee at a random startup? The average valuation <code>a</code> in the unicorn cohort is $3.6B. At a 0.07% success rate <code>s</code>, a (reasonable) 20% dilution rate <code>d</code> per round, and (arbitrarily) 4 rounds of funding <code>f</code> the averaged remaining value of the entire random company is 
+                        An easy way of investigating this is to ask, what percentage of the company do you need to own if you want to earn a $1M payout as an early employee at a random startup? The average valuation <code>a</code> in the unicorn cohort is $3.6B. At a 0.07% success rate <code>s</code>, a (reasonable) 20% dilution rate <code>d</code> per round, and (a common) 4 rounds of funding <code>f</code> the averaged remaining value of the entire random company is 
                     </p>
 
                     <p class="tab">
@@ -199,6 +209,70 @@
 The Perils of Ignoring Heterogeneity</a>. In particular the mathematics here cross applies to all sorts of retention models.</li>
                         <li><a name="ref-03" href="https://blog.wealthfront.com/startup-employee-equity-compensation/">Wealthfront — Manage Your Tech Career</a></li>
                     </ol>
+                    
+                    <a name="calculator"></a>
+                    <h2>Appendix One: Calculator</h2>
+                    
+                    <p>
+                        <form id="calculator" oninput="
+                            var a = parseInt(average_unicorn_value.value);
+                            var s = parseFloat(unicorn_success_rate.value) / 100 / 100;
+                            var d = parseFloat(dilution_rate.value) / 100;
+                            var f = parseFloat(funding_rounds.value);
+                            
+                            var c = parseInt(initial_cost.value);
+                            var i = parseFloat(initial_ownership.value) / 100;
+                            
+                            var years = parseFloat(years_til_liquidity.value);
+                            var discount_pct = parseFloat(future_value_discount.value) / 100;
+                            
+                            var retained = Math.pow(1 / (1 + discount_pct), years);
+                            
+                            var dollars = a * s * Math.pow((1-d), f) * i * 1000 * 1000 * retained - c;
+                            residual.value = '$' + Math.round(dollars);">
+                            <input type="number" id="average_unicorn_value" value="3600">
+                            <label for="average_unicorn_value">Average Unicorn Value (M$)</label>
+                            <br>
+                            
+                            <input type="number" id="unicorn_success_rate" value="7">
+                            <label for="unicorn_success_rate">Unicorn Success Rate (Percent of a Percent)</label><br>
+                            
+                            <input type="number" id="dilution_rate" value="20">
+                            <label for="dilution_rate">Dilution Rate (%)</label><br>
+                        
+                            <input type="number" id="funding_rounds" value="4">
+                            <label for="funding_rounds">Number of Funding Rounds</label><br>
+                            
+                            <br>
+                        
+                            <input type="number" id="initial_cost" value="0">
+                            <label for="initial_cost">Initial Cost of Options</label><br>
+                            
+                            <input type="number" id="initial_ownership" value="0.1">
+                            <label for="initial_ownership">Initial Ownership Stake (%)</label><br>
+                            
+                            <br>
+                            
+                            <input type="number" id="years_til_liquidity" value="7">
+                            <label for="years_til_liquidity">Years Until Liquidity</label><br>
+                            
+                            <input type="number" id="future_value_discount" value="3">
+                            <label for="initial_ownership">Future Value Discount (%/year)</label><br>
+                            
+                            <br>
+                            
+                            Net Discounted Value: 
+                            <output name="residual" for="average_unicorn_value unicorn_success_rate 
+                                dilution_rate funding_rounds initial_cost initial_ownership"></output>
+                        </form>
+                        <script type="text/javascript">
+                        try {
+                            document.getElementById("calculator").oninput();
+                        } catch (err) {
+                            // welp
+                        }
+                        </script>
+                    </p>
                     
                     </div>
                 </td>
